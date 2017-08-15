@@ -4,6 +4,10 @@ var allProducts = [];
 var imgQue = [];
 var display = document.getElementById("display");
 var parent = document.getElementById("display");
+var newProduct1;
+var newProduct2;
+var newProduct3;
+
 
 //Creates each prodcut instance. Adds to allProducts array.
 function createProduct(img, name){
@@ -11,7 +15,6 @@ function createProduct(img, name){
     this.shown = 0;
     this.voted = 0;
     this.name = name;
-    this.shown = 0;;
     this.addToArray(); //Adds to product to array.
     console.log(this.name + " product has been created");
     console.log(allProducts)
@@ -21,11 +24,7 @@ function createProduct(img, name){
 createProduct.prototype.addToArray = function(){
     allProducts.push(this);
 };
-function test(){
-  console.log(bag.shown);
-  bag['shown'] = bag.shown + 1;
-  console.log(bag.shown);
-}
+
 
 function reloadQue(){//Creates 6 unique random numbers and adds them to imgQue. 
   
@@ -42,28 +41,48 @@ function reloadQue(){//Creates 6 unique random numbers and adds them to imgQue.
 //Displaying their image property.
 function addToDOM(){
   
-  var newProduct1 = document.createElement("img");
-  var newProduct2 = document.createElement("img");
-  var newProduct3 = document.createElement("img");
+   newProduct1 = document.createElement("img");
+   newProduct2 = document.createElement("img");
+   newProduct3 = document.createElement("img");
   newProduct1.setAttribute("src", allProducts[imgQue[0]].img);
   newProduct1.setAttribute("class", "product");
+  newProduct1.setAttribute("id", "product1");
   newProduct2.setAttribute("src", allProducts[imgQue[1]].img);
   newProduct2.setAttribute("class", "product");
+  newProduct2.setAttribute("id", "product2");
   newProduct3.setAttribute("src", allProducts[imgQue[2]].img);
   newProduct3.setAttribute("class", "product");
+  newProduct1.setAttribute("id", "product3");
   display.appendChild(newProduct1);
   display.appendChild(newProduct2);
   display.appendChild(newProduct3);
   for(i = 0; i < 3; i++ ){
     allProducts[imgQue[i]]['shown'] = allProducts[imgQue[i]].shown + 1;
   }
-  imgQue.splice(0,3)
+  newProduct1.addEventListener("click", voted1);
+  newProduct2.addEventListener("click",voted2);
+  newProduct3.addEventListener("click", voted3);
   reloadQue();
   console.log("imgQue a2d " +imgQue);
 }
 
-display.addEventListener("click", nextProducts);
+
+
+function voted1(){
+  allProducts[imgQue[0]]['voted'] = allProducts[imgQue[0]].voted + 1;
+  nextProducts();
+}
+function voted2(){
+  allProducts[imgQue[1]]['voted'] = allProducts[imgQue[1]].voted + 1;
+  nextProducts();
+}
+function voted3(){
+  allProducts[imgQue[2]]['voted'] = allProducts[imgQue[2]].voted + 1;
+  nextProducts();
+}
+
 function nextProducts(){
+  imgQue.splice(0,3)
   for(i = 0; i < 3; i++ ){
     var child = document.getElementsByClassName("product")[0];
     parent.removeChild(child);
@@ -83,6 +102,3 @@ var dogduck = new createProduct("img/dog-duck.jpg", "dog duck");
 var dragon = new createProduct("img/dragon.jpg", "dragon");
 reloadQue();
 addToDOM();
-test();
-test();
-test();
