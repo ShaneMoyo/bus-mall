@@ -4,6 +4,7 @@ var allProducts = [];
 var imgQue = [];
 var display = document.getElementById("display");
 var parent = document.getElementById("display");
+var clicks = 0;
 
 //Creates each prodcut instance. Adds to allProducts array.
 function createProduct(img, name){
@@ -58,7 +59,7 @@ function addToDOM(){
 display.addEventListener("click", nextProducts);
 
 function nextProducts(){//removes currently displayed products and displays 3 new products.
-  
+    
     for(i = 0; i < 3; i++ ){
         var child = document.getElementsByClassName("product")[0];
         console.log(child);
