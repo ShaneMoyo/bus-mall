@@ -1,4 +1,13 @@
+
+
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: black;
+}
 .product {
+    margin: 15px;
+    border: 5px solid grey;
     height: 250px;
     width: 400px;
 };
