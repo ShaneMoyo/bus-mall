@@ -95,6 +95,7 @@ reloadDisplayQue();
 renderToDOM();
 
 //Creates chart showing items vote total compared with the shown total. 
+
 function createChart() {
 var chartCanvas = document.getElementById('graph');
 var myChart = new Chart (chartCanvas, {
