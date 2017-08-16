@@ -52,10 +52,12 @@ function addToDOM(){
 
 function vote(){//Raises vote property of whatever object corresponds to the image clicked.
   var clicked = event.target
-  for (i = 0; i < allProducts.length; i ++){//finds object assciated with image
-    if(allProducts[i].name === clicked.id){//Once object is found voted property is increased by 1
+  console.log(clicked);
+  for (i = 0; i < allProducts.length; i ++){//finds object assciated with image.
+    if(allProducts[i].name === clicked.id){//Once object is found voted property is increased by 1.
       allProducts[i]['voted'] = allProducts[i].voted +1
       console.log(allProducts[i].name + " votes: " + allProducts[i].voted);
+     
     }
   }
   clicks += 1;
@@ -63,6 +65,7 @@ function vote(){//Raises vote property of whatever object corresponds to the ima
 }
 
 function nextProducts(){//Removes first three used indices stored in imgQue then removes the 3 products displayed. 
+  console.log('imgQue' + imgQue);
   imgQue.splice(0,3);
   for(i = 0; i < 3; i++ ){
     var child = document.getElementsByClassName("product")[0];
