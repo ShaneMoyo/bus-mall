@@ -29,21 +29,13 @@ function reloadDisplayQue(){//Creates 6 unique random numbers and adds them to p
 //Function that will select 3 product instances from productsArray at indices corresponding
 //to the first 3 indices productDisplayQue adding their corresponding age to the DOM.
 function renderToDOM(){
-  var product1 = document.createElement("img");
-  var product2 = document.createElement("img");
-  var product3 = document.createElement("img");
-  product1.setAttribute("src", productsArray[productDisplayQue[0]].img);
-  product1.setAttribute("class", "product");
-  product1.setAttribute("id", productsArray[productDisplayQue[0]].name);
-  product2.setAttribute("src", productsArray[productDisplayQue[1]].img);
-  product2.setAttribute("class", "product");
-  product2.setAttribute("id", productsArray[productDisplayQue[1]].name);
-  product3.setAttribute("src", productsArray[productDisplayQue[2]].img);
-  product3.setAttribute("class", "product");
-  product3.setAttribute("id", productsArray[productDisplayQue[2]].name);
-  productDisplay.appendChild(product1);
-  productDisplay.appendChild(product2);
-  productDisplay.appendChild(product3);
+  for(i = 0; i < 3; i++){//Creates 3 image elements containing product pictures and renders them to the DOM.
+  var product = document.createElement("img");
+  product.setAttribute("src", productsArray[productDisplayQue[i]].img);
+  product.setAttribute("class", "product");
+  product.setAttribute("id", productsArray[productDisplayQue[i]].name);
+  productDisplay.appendChild(product);
+  }
   for(i = 0; i < 3; i++ ){//Raises show prperty of productDisplayed productsArray by 1. 
     productsArray[productDisplayQue[i]]['shown'] = productsArray[productDisplayQue[i]].shown + 1;
   }
