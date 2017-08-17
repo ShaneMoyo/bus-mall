@@ -6355,8 +6355,8 @@ module.exports = function() {
 				animationDuration: 400
 			},
 			onClick: null,
-			defaultColor: 'rgba(0,0,0,0.1)',
-			defaultFontColor: '#666',
+			defaultColor: 'rgba(255,255,255,0.7)',
+			defaultFontColor: 'rgba(255,255,255,0.7)',
 			defaultFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
 			defaultFontSize: 12,
 			defaultFontStyle: 'normal',

@@ -107,22 +107,22 @@ for(i = 0; i < 20; i++){
     datasets: [{
       label: 'Current Game Votes',
       data: voteData,
-      backgroundColor: 'rgb(10,181,61)'
+      backgroundColor: 'rgb(255, 255, 255)'
     },
     {
       label: 'Displayed During current Game',
       data: showData,
-      backgroundColor: 'rgb(10,118,181)'
+      backgroundColor: 'rgb(255, 255, 255)'
     },
     {
       label: 'Displayed Over All Games',
       data: totalShowData,
-      backgroundColor: 'rgba(10,118,181, 0.2)'
+      backgroundColor: 'rgba(255, 255, 255, 0.5)'
     },
     {
       label: 'Votes Over All Games',
       data: totalVoteData,
-      backgroundColor: 'rgba(10,181,61, 0.2)'
+      backgroundColor: 'rgba(255, 255, 255, 0.5)'
     }]
   },
   options: {

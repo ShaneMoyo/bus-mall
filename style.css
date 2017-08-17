@@ -1,13 +1,38 @@
 
 
 h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Advent Pro';
     text-align: center;
-    color: black;
+    color: white;
+    font-size: 68px;
+
 }
-.product {
-    margin: 15px;
-    border: 5px solid grey;
+#productDisplay {
+    padding: 0px 10px 60px 80px;
+    
+}
+body{
+    background-color: rgb(136, 195, 201);
+}
+.product:hover {
     height: 250px;
     width: 400px;
+    opacity: 1;
+    border-radius: 15px;    
+    box-shadow: 10px 10px 10px rgb(95, 136, 140);
+}
+
+.product {
+    border-radius: 50px;
+    margin: 15px;
+    height: 220px;
+    width: 350px;
+    opacity: 0.8;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
 };
+#productDisplay {
+    border: 10px solid black;
+    margin: 0, auto;
+
+}
