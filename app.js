@@ -6,6 +6,7 @@ var productDisplay = document.getElementById("productDisplay"); //Parent element
 var clickCounter = 0; //Records the amount of votes made by the participant. 
 var loggedData = localStorage.getItem('SavedData');
 var roundCounter = 0;
+var width = 0;
 function productCreator(img, name){//Creates each prodcut instance and adds to them to productsArray.
     this.img = img;
     this.shown = [0];
@@ -57,6 +58,7 @@ function vote(){//Raises vote property of whatever object corresponds to the img
     }
   }
   clickCounter += 1;
+  move();
   if(clickCounter < 25){nextproductsArray();} else if (clickCounter === 25 ){ createChart();} 
 }
 
@@ -70,6 +72,7 @@ function nextproductsArray(){//Removes first three used indices stored in produc
   reloadDisplayQue();
 renderToDOM();
 console.log("clickCounter at: " + clickCounter);
+
 };
 
 
@@ -175,6 +178,16 @@ if(loggedData){
   var wineGlass = new productCreator("img/wine-glass.jpg", "wineGlass");
 };
 
+//progress bar
+function move() {
+    var elem = document.getElementById("myBar");
+    width += 4;
+    elem.style.width = width + '%';
+    elem.innerHTML = width * 1 + '%';
+        }
+    
+
 console.log(productDisplayQue);
 reloadDisplayQue();
 renderToDOM();
+
