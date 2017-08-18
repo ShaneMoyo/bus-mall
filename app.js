@@ -54,7 +54,7 @@ function vote(){//Raises vote property of whatever object corresponds to the ima
   var clicked = event.target
   console.log(clicked);
   for (i = 0; i < allProducts.length; i ++){//finds object assciated with image.
-    if(allProducts[i].name === clicked.id){//Once object is found voted property is increased by 1.
+    if(allProducts[i].name === clicked.id && clicks < 25){//Once object is found voted property is increased by 1.
       allProducts[i]['voted'] = allProducts[i].voted +1
       console.log(allProducts[i].name + " votes: " + allProducts[i].voted);
      
