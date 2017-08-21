@@ -147,6 +147,18 @@ function createChart() {
     },
   }
   var myChart = new Chart(chartCanvas, chartData);
+  //render reset data button to DOM.
+  var resetData = document.getElementById('reset');
+  var resetButton = document.createElement('input')
+  resetButton.setAttribute('type','submit');
+  resetButton.setAttribute('value','Reset Data');
+  resetButton.setAttribute('id','Resetbutton');
+  resetData.appendChild(resetButton);
+
+  resetData.addEventListener('click', clearLocalStorage);
+  function clearLocalStorage(){
+  localStorage.clear();
+  }
 }
 
 //Creating all object instances 

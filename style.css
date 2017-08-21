@@ -56,3 +56,9 @@ body{
     line-height: 30px; /* To center it vertically */
     color: rgba(102, 146, 150, 0.5); 
 }
+
+#Resetbutton{
+    margin: 10px auto 500px auto;;
+    width: 25%;
+    padding: 10px;
+}
